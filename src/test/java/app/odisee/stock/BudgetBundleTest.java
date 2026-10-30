@@ -28,4 +28,9 @@ class BudgetBundleTest {
     void needsTwoItems() {
         assertEquals(OptionalLong.empty(), BudgetBundle.bestPairTotal(List.of(item("A", 10)), 1000));
     }
+
+    @Test
+    void adjacentPairAtTheEndIsConsidered() {
+        assertEquals(OptionalLong.of(30), BudgetBundle.bestPairTotal(List.of(item("A", 10), item("B", 20)), 30));
+    }
 }

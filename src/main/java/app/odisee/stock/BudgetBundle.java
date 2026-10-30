@@ -19,7 +19,7 @@ public final class BudgetBundle {
         long best = -1;
         int lo = 0;
         int hi = prices.length - 1;
-        while (lo < hi - 1) {
+        while (lo < hi) {
             long sum = prices[lo] + prices[hi];
             if (sum <= budgetCents) {
                 best = Math.max(best, sum);
